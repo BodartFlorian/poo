@@ -16,7 +16,7 @@ services:
         restart: always
         environment:
             MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: marvel
+            MYSQL_DATABASE: poo
             MYSQL_USER: user
             MYSQL_PASSWORD: mdp
         ports:

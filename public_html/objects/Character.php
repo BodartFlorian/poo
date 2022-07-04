@@ -8,17 +8,15 @@ class Character {
 
 
     // Constructor
-    public function __construct($a = 10, $b) {
+    public function __construct($a = 10, $b = 0) {
         $this->setLife($a);    
-        $this->setDef($b);    
+        $this->setDef($b);       
     }
-
 
     // Getters
     public function getLife() {
         return $this->life;
     }
-    
     public function getDef() {
         return $this->def;
     }
@@ -29,18 +27,11 @@ class Character {
 
         $this->life = $life;
     }
-
     public function setDef($def) {
         // Secure ...
 
         $this->def = $def;
     }
-    
+      
     // Methodes
-    public function describe() {
-        echo '<pre>';
-        print_r($this);
-        echo '</pre>';
-        // var_dump($this);
-    }
 }

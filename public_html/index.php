@@ -9,21 +9,53 @@
 <body>
     <?php
 
-    include_once './objects/warrior.php';
+    include_once './objects/Warrior.php';
+    include_once './objects/Wizard.php';
+    include_once './objects/Archer.php';
+    include_once './objects/Manager.php';
+    include_once './settings/db.php';
 
-    // MVC : model view controller
-    // $warriorOne = new Character;
-    // $warriorOne->describe();
+    if(false){
+    
+        // // create Warrior    
+        // $tab = ["sword" => 13,"life" => 145,"def" => 50];
+        // $warriorOne = new Warrior;
+        // $warriorOne->hydrate($tab);
 
-    // $warriorOne->setLife(20);
-    // $warriorOne->setDef(6);
-    // $warriorOne->describe();
+        // // create Wizard    
+        // $tab = ["staff" => 20,"life" => 80,"def" => 10];
+        // $wizardOne = new Wizard;
+        // $wizardOne->hydrate($tab);
+
+        // // create Archer    
+        // $tab = ["bow" => 16,"life" => 95,"def" => 20];
+        // $archerOne = new Archer;
+        // $archerOne->hydrate($tab);
+
+
+        // // Manager
+        // $manager = new Manager;
+        // $manager->read($warriorOne);
+        // $manager->read($wizardOne);
+        // $manager->read($archerOne);
+        // $manager->update($warriorOne);
+        // $manager->create($warriorOne);
     
-    // $warriorTwo = new Character(20, 6);
-    // $warriorTwo->describe();
+    }
+
+
+    $tank = new Warrior(21, 41, 31);
     
-    $warriorOne = new Warrior(20, 6);
-    $warriorOne->describe();
+    $manager = new Manager($db);
+    $manager->create($tank);
+
+    $tank->setLife(0);
+    $manager->update($tank);
+    $manager->read($tank);
+
+    $manager->delete($tank);
+    echo 'hey';
+
 
     ?>
 </body>
